@@ -12,14 +12,21 @@
   "hostRequirements": {
     "cpus": 4
   },
+  "runArgs": [
+    "--env-file",
+    ".env"
+  ],
   "waitFor": "onCreateCommand",
   "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
   "customizations": {
     "codespaces": {
       "openFiles": []
     },
     "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.terminal.activateEnvironment": false
+      },
       "extensions": [
         "ms-toolsai.jupyter",
         "ms-python.python",
